@@ -1,4 +1,7 @@
-$('.header-container').on('click', '#landscape-btn', function() {
-    $('.app-container').load('../views/landscape.html');
+$('.header-container').on('click', '#landscapes-btn', function() {
+    $('.app-container').load('../views/portfolio/landscapes.html');
 });
 
+$('.header-container').on('click', '#portraits-btn', function () {
+    $('.app-container').load('../views/portfolio/portraits.html');
+});
