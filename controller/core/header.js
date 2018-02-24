@@ -20,7 +20,7 @@ $('.header-container').on('click', '#landscapes-btn', function () {
                             $(this).find('a').each(function () {
                                 this.setAttribute('href', data.data[i].images.standard_resolution.url);
                                 $(this).find('img').each(function () {
-                                    this.setAttribute('src', data.data[i].standard_resolution.url)
+                                    this.setAttribute('src', data.data[i].images.standard_resolution.url)
                                         ;
                                 });
                             });
