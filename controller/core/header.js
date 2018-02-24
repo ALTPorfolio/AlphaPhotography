@@ -1,8 +1,12 @@
-$('.header-container').on('click', '#landscapes-btn', function () {
-    $('.app-container')
-        .load('../views/portfolio/landscapes.html', function () {
+
+headerContainer = $('.header-container');
+appContainer = $('.app-container');
+
+headerContainer.on('click', '#landscapes-btn', function() {
+    appContainer
+        .load('../views/portfolio/landscapes.html', function() {
             $.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=7163448156.1677ed0.2dfbf24af3444d2bb44c2103bc40a019',
-                function (data) {
+                function(data) {
 
                     //$('#thumbnail-tag0').each(function () {
                     //    console.log(this);
@@ -16,7 +20,7 @@ $('.header-container').on('click', '#landscapes-btn', function () {
 
                     var landscapeImgs = [];
                     for (var i = 0; i < data.data.length; i += 1) {
-                        if (data.data[i].tags == "landscapes") {
+                        if (data.data[ i ].tags == 'landscapes') {
                             landscapeImgs.push(data.data[i]);
                         }
                     }
@@ -36,3 +40,19 @@ $('.header-container').on('click', '#landscapes-btn', function () {
         });
 });
 
+
+headerContainer.on('click', '#home-btn', function() {
+    appContainer.load('../views/core/home.html');
+});
+
+headerContainer.on('click', '#photosessions-btn', function() {
+    appContainer.load('../views/photosessions/photosessions.html');
+});
+
+headerContainer.on('click', '#portraits-btn', function() {
+    appContainer.load('../views/portfolio/portraits.html');
+});
+
+headerContainer.on('click', '#contacts-btn', function() {
+    appContainer.load('../views/contacts/contacts.html');
+});
