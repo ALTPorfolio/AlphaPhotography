@@ -14,14 +14,20 @@ $('.header-container').on('click', '#landscapes-btn', function () {
                     //    });
                     //});
 
-                    for (var i = 0; i < 3; i++) {
-                        $('#thumbnail-tag' + i).each(function () {
+                    var landscapeImgs = [];
+                    for (var i = 0; i < data.data.length; i += 1) {
+                        if (data.data[i].tags == "landscapes") {
+                            landscapeImgs.push(data.data[i]);
+                        }
+                    }
+                    
+                    for (var j = 0; j < landscapeImgs.length; j++) {
+                        $('#thumbnail-tag' + j).each(function() {
                             console.log(this);
-                            $(this).find('a').each(function () {
-                                this.setAttribute('href', data.data[i].images.standard_resolution.url);
-                                $(this).find('img').each(function () {
-                                    this.setAttribute('src', data.data[i].images.standard_resolution.url)
-                                        ;
+                            $(this).find('a').each(function() {
+                                this.setAttribute('href', landscapeImgs[j].images.standard_resolution.url);
+                                $(this).find('img').each(function() {
+                                    this.setAttribute('src', landscapeImgs[j].images.standard_resolution.url);
                                 });
                             });
                         });
