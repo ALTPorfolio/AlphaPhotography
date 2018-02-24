@@ -1,5 +1,5 @@
 
-$(document).ready(function () {
+$(function () {
     $('.header-container').load('./views/core/header.html', function () {
     });
     $('.app-container').load('./views/core/home.html', function () {
