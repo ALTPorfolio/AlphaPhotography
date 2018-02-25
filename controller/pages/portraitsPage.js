@@ -22,7 +22,7 @@ function portraitsPage() {
                                                     <a href="${portraitsImgs[j].images.standard_resolution.url}">
                                                         <img src="${portraitsImgs[j].images.standard_resolution.url}">
                                                         <div class="caption">
-                                                            <p>Lorem ipsum...</p>
+                                                            <p>${portraitsImgs[j].caption.text}</p>
                                                         </div>
                                                     </a>
                                                 </div>

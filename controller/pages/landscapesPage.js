@@ -22,11 +22,12 @@ function landscapesPage() {
                                                     <a href="${landscapesImgs[j].images.standard_resolution.url}">
                                                         <img src="${landscapesImgs[j].images.standard_resolution.url}">
                                                         <div class="caption">
-                                                            <p>Lorem ipsum...</p>
+                                                            <p>${landscapesImgs[j].caption.text}</p>
                                                         </div>
                                                     </a>
                                                 </div>
                                             </div>`;
+                                            
 
                     $('#landscapesID').append(templateStr);
                 }
