@@ -1,5 +1,7 @@
-
 $(function () {
+    const headerContainer = $('.header-container');
+    const appContainer = $('.app-container');
+
     $('.header-container').load('./views/core/header.html', function () {
 
         headerContainer.on('click', '#home-btn', function () {
@@ -12,9 +14,13 @@ $(function () {
 
         headerContainer.on('click', '#portraits-btn', function () {
             const page = portraitsPage();
-            console.log("hello!");
             page.loadHtml();
         });
+
+        headerContainer.on('click', '#landscapes-btn', function () {
+            const page = landscapesPage();
+            page.loadHtml();
+        })
 
         headerContainer.on('click', '#contacts-btn', function () {
             appContainer.load('../views/contacts/contacts.html');
