@@ -1,16 +1,35 @@
+<div id="inspirationModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-<form>
-    <div class="form-group">
-        <label for="submitter-names">Your name(s)</label>
-        <input type="text" class="form-control" id="submitter-names"placeholder="Enter your names so we can credit you...">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Inspire us with a photo</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Your name(s)</label>
+                        <input type="text" class="form-control" id="inspire-names" placeholder="Enter your name(s) so we can credit you...">
+                    </div>
+                    <div class="form-group">
+                        <label for="inspiration-description">Description</label>
+                        <textarea class="form-control" id="inspiration-description" rows="1" placeholder="Shortly describe your picture..."></textarea>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            I agree to the <a href="https://media.culturalist.com/media/fd936fa5072399c113d8edd425e4139a.jpeg" target="_blank">Terms and conditions</a>
+                        </label>
+                    </div>
+                    <button id="submit-inspiration-btn" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
     </div>
-    <div class="form-group">
-        <label for="submission-url">Link to the picture you would like to inspire us by</label>
-        <input type="url" class="form-control" id="submission-url" placeholder="https://generic-site.com/generic-image.png/">
-    </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="privacy-and-terms">
-        <label class="form-check-label" for="privacy-and-terms">I agree to the <a href="https://www.sdge.com/sites/default/files/PrivacyShield.png">Privacy policy</a> and the <a href="https://cdn.shopify.com/s/files/1/0288/9862/products/featured-version_06293d9d-bcc2-4877-8a69-d3b641ddc94b_grande.png?v=1479768820">Terms and conditions</a></label>
-    </div>
-    <button id="submit-inspiration-btn"type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
+

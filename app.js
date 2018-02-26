@@ -15,7 +15,7 @@ $(function () {
             $("#request-btn").show();
         });
 
-        headerContainer.on('click', '#submit-inspiration-btn', function () {
+        headerContainer.on('click', '#inspire-us-btn', function () {
             appContainer.load('../views/inspire-us/inspire-us.html');
             $("#request-btn").hide();
         });
