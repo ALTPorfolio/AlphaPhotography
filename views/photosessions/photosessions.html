@@ -24,14 +24,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleSelect1">Event category</label>
                                         <select class="form-control" id="exampleSelect1">
-                                            <option disabled="disabled" class="text-muted" selected="selected">Select a category</option>
+                                            <option disabled class="text-muted" selected>Select a category...</option>
                                             <option>Wedding</option>
                                             <option>Family gathering</option>
                                             <option>Teambuilding</option>
@@ -39,23 +38,17 @@
                                             <option>Other</option>
                                         </select>
                                     </div>
-                                    <!--<div class="form-group">
-                                      <label for="exampleSelect2">Example multiple select</label>
-                                      <select multiple class="form-control" id="exampleSelect2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                      </select>
-                                    </div>-->
                                     <div class="form-group">
                                         <label for="exampleTextarea">Description</label>
                                         <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Shortly describe the planned event..."></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label>MAKE Date time shit</label>
-                                        <input type="datetime-local" class="form-control" id="names">
+                                        <label>Pick date of event</label>
+                                        <input type="date" class="form-control" id="date" value="2018-03-01" min="2018-03-01">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Pick time of event</label>
+                                        <input type="time" class="form-control" id="time" value="12:00">
                                     </div>
                                     <fieldset class="form-group">
                                         <legend>Location</legend>
@@ -77,11 +70,12 @@
                                                 Svoge
                                             </label>
                                         </div>
+                                        <p><small class="text-muted">Other possible locations will be added in near future.</small></p>
                                     </fieldset>
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input type="checkbox" class="form-check-input">
-                                            Check me out
+                                            I agree to the <a href="https://media.culturalist.com/media/fd936fa5072399c113d8edd425e4139a.jpeg" target="_blank">Terms and conditions</a>
                                         </label>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
