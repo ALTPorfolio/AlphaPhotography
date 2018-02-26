@@ -8,7 +8,6 @@ $(function () {
         headerContainer.on('click', '#home-btn', function () {
             appContainer.load('../views/core/home.html');
             $("#request-btn").hide();
-
         });
 
         headerContainer.on('click', '#photosessions-btn', function () {
@@ -16,6 +15,10 @@ $(function () {
             $("#request-btn").show();
         });
 
+        headerContainer.on('click', '#submit-inspiration-btn', function () {
+            appContainer.load('../views/inspire-us/inspire-us.html');
+            $("#request-btn").hide();
+        });
 
         headerContainer.on('click', '#portraits-btn', function () {
             const page = portraitsPage();
