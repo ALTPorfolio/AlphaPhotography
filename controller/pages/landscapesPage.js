@@ -1,4 +1,7 @@
+
 function landscapesPage() {
+
+
     const appContainer = $('.app-container');
 
     function loadHtml() {
@@ -27,7 +30,7 @@ function landscapesPage() {
                                                     </a>
                                                 </div>
                                             </div>`;
-                                            
+
 
                     $('#landscapesID').append(templateStr);
                 }

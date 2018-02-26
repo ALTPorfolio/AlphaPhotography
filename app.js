@@ -17,6 +17,8 @@ $(function () {
 
         headerContainer.on('click', '#inspire-us-btn', function () {
             appContainer.load('../views/inspire-us/inspire-us.html');
+            const page = inspire_us();
+            page.loadHtml();
             $("#request-btn").hide();
         });
 
@@ -25,6 +27,7 @@ $(function () {
             page.loadHtml();
             $("#request-btn").hide();
         });
+
 
         headerContainer.on('click', '#landscapes-btn', function () {
             const page = landscapesPage();
