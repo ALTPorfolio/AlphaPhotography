@@ -1,32 +1,19 @@
-<input type="text" id="meta_title" name="seo_meta_title">
-<input type="text" id="meta_description" name="seo_meta_description">
-<input type="text" id="header" name="header">
+<form id="submit-photo-form">
+    <input type="text" id="user-name">
+    <input type="text" id="picture-description">
+    <input type="text" id="picture-url">
 
-<!-- Submit form-->
-<input type="submit" value="Create">
+    <button id="submit">Submit!</button>
 
-<!-- buttons-->
-<button id="save">save</button>
-<button id="load">load</button>
+    <script type="text/javascript">
+        $('#submit').on('click', function () {
 
-<script type="text/javascript">
-    $('#save').on('click', function () {
+            $('input[type="text"]').each(function () {
+                var id = $(this).attr('id');
+                var value = $(this).val();
+                localStorage.setItem(id, value);
 
-        $('input[type="text"]').each(function () {
-            var id = $(this).attr('id');
-            var value = $(this).val();
-            localStorage.setItem(id, value);
-
+            });
         });
-    });
-
-    $('#load').on('click', function () {
-        $('input[type="text"]').each(function () {
-            var id = $(this).attr('id');
-            var value = localStorage.getItem(id);
-
-            $(this).val(value);
-
-        });
-    });
-</script>
+    </script>
+</form>
