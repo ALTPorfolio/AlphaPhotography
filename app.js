@@ -42,7 +42,5 @@ $(function () {
     });
     $('.app-container').load('./views/core/home.html', function () {
     });
-    $('.footer-container').load('./views/core/footer.html', function () {
-    });
 });
 
