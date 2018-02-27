@@ -43,7 +43,15 @@ function inspire_us() {
             var result = testImage(pictureUrl.val(), 5000);
             result
                 .then(function (success) {
-                    itemsArray.push(pictureUrl.val());
+
+                    let submission = {
+                        name: userName.val(),
+                        pictureD: pictureDescription.val(),
+                        url: pictureUrl.val()
+
+                    };
+
+                    itemsArray.push(submission);
                     localStorage.setItem("items", JSON.stringify(itemsArray));
                     bootbox.alert("Thank you for your contribution!");
                 })
