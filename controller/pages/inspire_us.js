@@ -1,17 +1,20 @@
-var lsa = [];
-
 function inspire_us() {
     const appContainer = $('.app-container');
 
     function loadHtml() {
-        appContainer.load('../views/inspire-us/inspire-us.html', onLoad());
+        appContainer.load('../views/inspire-us/inspire-us.html', onLoad);
+
     }
 
     function onLoad() {
-        localStorage.setItem('lsa', JSON.stringify(lsa));
-        var retrievedObject = JSON.parse(localStorage.getItem('lsa'));
+        if (window.localStorage.getItem("lsa") == null) {
+            var lsa = [];
+            window.localStorage.setItem("lsa", JSON.stringify(lsa));
+        }
 
-        dict = {
+        var retrievedArray = JSON.parse(window.localStorage.getItem('lsa'));
+
+        var dict = {
             "user-name": " ",
             "picture-description": " ",
             "picture-url": " "
@@ -22,17 +25,19 @@ function inspire_us() {
 
                 var id = $(this).attr('id');
                 var value = $(this).val();
+                console.log(id);
+                console.log(value);
+                console.log('e');
                 dict[id] = value;
-                retrievedObject.p
-                localStorage.setItem('lsa', JSON.stringify(lsa));
-
-                //localStorage.setItem(id, value);
             })
         });
+
+        retrievedArray.push(dict);
+        window.localStorage.setItem('lsa', JSON.stringify(retrievedArray));
+        console.log(retrievedArray);
     }
 
     return {
         loadHtml: loadHtml
     };
-
 }
