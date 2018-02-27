@@ -1,5 +1,3 @@
-var lsa = [];
-
 function inspire_us() {
     const appContainer = $('.app-container');
 
