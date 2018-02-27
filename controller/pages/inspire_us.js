@@ -43,9 +43,6 @@ function inspire_us() {
             var result = testImage(pictureUrl.val(), 5000);
             result
                 .then(function (success) {
-
-                    
-
                     let submission = {
                         name: userName.val(),
                         pictureD: pictureDescription.val(),
@@ -54,7 +51,7 @@ function inspire_us() {
                     };
 
                     if (submission.pictureD == '') {
-                        submission.pictureD = 'idk man';
+                        submission.pictureD = 'Generic piece';
                     }
                     if (submission.name == '') {
                         submission.name = 'Anonymous';
@@ -77,8 +74,6 @@ function inspire_us() {
                                                         <img src="${item.url}">
                                                         <div class="caption">
                                                             <p>"${item.pictureD}"</p>
-                                                        </div>
-                                                        <div class="caption">
                                                             <p>by ${item.name}</p>
                                                         </div>
                                                     </a>
