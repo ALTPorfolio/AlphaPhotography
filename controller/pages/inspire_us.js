@@ -32,6 +32,8 @@ function inspire_us() {
 
         let submitButton = $('#submit-picture');
         let pictureUrl = $('#picture-url');
+        let userName = $('user-name');
+        let pictureDescription = $('#picture-description')
         let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
         localStorage.setItem('items', JSON.stringify(itemsArray));
@@ -54,8 +56,8 @@ function inspire_us() {
         data.forEach(item => {
             let templateStr2 = `<div class="col-md-4">
                                                 <div id="thumbnail-tag0" class="thumbnail">
-                                                    <a href="${item}">
-                                                        <img src="${item}">
+                                                    <a href="${item.url}">
+                                                        <img src="${item.url}">
                                                     </a>
                                                 </div>
                                             </div>`;
