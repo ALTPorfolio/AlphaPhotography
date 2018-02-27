@@ -1,31 +1,38 @@
-function submit_picture() {
-        if (window.localStorage.getItem("lsa") == null) {
-            var lsa = [];
-            window.localStorage.setItem("lsa", JSON.stringify(lsa));
-        }
+function inspire_us() {
+    const appContainer = $('.app-container');
 
-        var retrievedArray = JSON.parse(window.localStorage.getItem('lsa'));
+    function loadHtml() {
+        appContainer.load('../views/inspire-us/inspire-us.html', onLoad);
+    }
 
-        var dict = {
-            "user-name": " ",
-            "picture-description": " ",
-            "picture-url": " "
-        };
+    function onLoad() {        
+        let submitButton = $('#submit-picture');
+        let pictureUrl = $('#picture-url');
+        let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
-        $('#submit-picture-btn').on('click', function () {
-            $('input[type="text"]').each(function () {
+        localStorage.setItem('items',JSON.stringify(itemsArray));
+        let data = JSON.parse(localStorage.getItem('items'));
 
-                var id = $(this).attr('id');
-                var value = $(this).val();
-                console.log(id);
-                console.log(value);
-                console.log('e');
-                dict[id] = value;
-            })
+        submitButton.on('click',function(){
+            itemsArray.push(pictureUrl.val());
+            localStorage.setItem("items", JSON.stringify(itemsArray));
+        })
+        data.forEach(item => {
+            let templateStr2 = `<div class="col-md-4">
+                                                <div id="thumbnail-tag0" class="thumbnail">
+                                                    <a href="${item}">
+                                                        <img src="${item}">
+                                                    </a>
+                                                </div>
+                                            </div>`;
+            $('#inspire-us').append(templateStr2);
         });
 
-        retrievedArray.push(dict);
-        window.localStorage.setItem('lsa', JSON.stringify(retrievedArray));
-        console.log(retrievedArray);
-}
 
+    }
+
+    return {
+        loadHtml: loadHtml
+    };
+
+}
