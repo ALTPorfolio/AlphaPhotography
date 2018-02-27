@@ -32,7 +32,7 @@ function inspire_us() {
 
         let submitButton = $('#submit-picture');
         let pictureUrl = $('#picture-url');
-        let userName = $('user-name');
+        let userName = $('#user-name');
         let pictureDescription = $('#picture-description')
         let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
@@ -44,12 +44,21 @@ function inspire_us() {
             result
                 .then(function (success) {
 
+                    
+
                     let submission = {
                         name: userName.val(),
                         pictureD: pictureDescription.val(),
                         url: pictureUrl.val()
 
                     };
+
+                    if (submission.pictureD == '') {
+                        submission.pictureD = 'idk man';
+                    }
+                    if (submission.name == '') {
+                        submission.name = 'Anonymous';
+                    }
 
                     itemsArray.push(submission);
                     localStorage.setItem("items", JSON.stringify(itemsArray));
@@ -66,6 +75,12 @@ function inspire_us() {
                                                 <div id="thumbnail-tag0" class="thumbnail">
                                                     <a href="${item.url}">
                                                         <img src="${item.url}">
+                                                        <div class="caption">
+                                                            <p>"${item.pictureD}"</p>
+                                                        </div>
+                                                        <div class="caption">
+                                                            <p>by ${item.name}</p>
+                                                        </div>
                                                     </a>
                                                 </div>
                                             </div>`;

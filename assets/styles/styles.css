@@ -55,3 +55,37 @@
 .gallery_product {
     margin-bottom: 30px;
 }
+
+
+/*inspire-us*/
+
+.inspire-us-page {
+    overflow: hidden;
+}
+
+.column {
+    float: left;
+}
+
+.half {
+    width: 70%;
+}
+
+.last {
+    float: none;
+    display: inline;
+    width: auto;
+    border: 30px;
+}
+
+.last span {
+    float: none;
+    width: auto;
+    border: 30px;
+    padding: 10px;
+}
+
+    .last button {
+        display: block;
+        
+    }
