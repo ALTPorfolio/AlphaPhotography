@@ -2,7 +2,7 @@ function inspire_us() {
     const appContainer = $('.app-container');
 
     function loadHtml() {
-        appContainer.load('../views/inspire-us/inspire-us.html', onLoad());
+        appContainer.load('../views/inspire-us/inspire-us.html', onLoad);
     }
 
     function onLoad() {        
@@ -11,10 +11,10 @@ function inspire_us() {
         let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
         localStorage.setItem('items',JSON.stringify(itemsArray));
-        const data = JSON.parse(localStorage.getItem('items'));
+        let data = JSON.parse(localStorage.getItem('items'));
 
         submitButton.on('click',function(){
-            itemArray.push(pictureUrl.val);
+            itemsArray.push(pictureUrl.val());
             localStorage.setItem("items", JSON.stringify(itemsArray));
         })
         data.forEach(item => {
