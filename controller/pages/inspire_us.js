@@ -1,12 +1,4 @@
-function inspire_us() {
-    const appContainer = $('.app-container');
-
-    function loadHtml() {
-        appContainer.load('../views/inspire-us/inspire-us.html', onLoad);
-
-    }
-
-    function onLoad() {
+function submit_picture() {
         if (window.localStorage.getItem("lsa") == null) {
             var lsa = [];
             window.localStorage.setItem("lsa", JSON.stringify(lsa));
@@ -20,7 +12,7 @@ function inspire_us() {
             "picture-url": " "
         };
 
-        $('#submit-picture').on('click', function () {
+        $('#submit-picture-btn').on('click', function () {
             $('input[type="text"]').each(function () {
 
                 var id = $(this).attr('id');
@@ -35,9 +27,5 @@ function inspire_us() {
         retrievedArray.push(dict);
         window.localStorage.setItem('lsa', JSON.stringify(retrievedArray));
         console.log(retrievedArray);
-    }
-
-    return {
-        loadHtml: loadHtml
-    };
 }
+
