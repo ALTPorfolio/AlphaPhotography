@@ -1,35 +1,27 @@
-<!--<form id="submit-photo-form">
-    <input type="text" id="user-name">
-    <input type="text" id="picture-description">
-    <input type="text" id="picture-url">
+    <script src='./controller/pages/inspire_us.js'></script>
 
-    <button id="submit">Submit!</button>-->
 
-    <form class="form-inline">
-        <div class="form-group">
-            <label type="text" for="user-name">Your name(s):</label>
-            <input type="text" class="form-control" id="user-name">
+
+    <div id='inspire-us' class='row'>
+
+    </div>
+
+
+    <form class='form-inline'>
+        <div class="form-group"> 
+        <label type="text" for="user-name">Your name(s):</label> 
+        <input type="text" class="form-control" id="user-name"> 
+    </div> 
+    <div class="form-group"> 
+        <label type="text" for="picture-description">Picture description:</label> 
+        <input type="text" class="form-control" id="picture-description" placeholder="Short description of picture..."> 
+    </div>  
+        <div class='form-group'>
+            <label type='text' for='picture-url'>Link to picture:</label>
+            <input type='text' class='form-control' id='picture-url' placeholder='https://example-site.com/example-pic.png'>
         </div>
-        <div class="form-group">
-            <label type="text" for="picture-description">Picture description:</label>
-            <input type="text" class="form-control" id="picture-description" placeholder="Short description of picture...">
-        </div>
-        <div class="form-group">
-            <label type="text" for="picture-url">Link to picture:</label>
-            <input type="text" class="form-control" id="picture-url" placeholder="https://example-site.com/example-pic.png">
-        </div>
-        <button id="submit-picture" type="submit" class="btn btn-default">Submit</button>
+        <button id='submit-picture' type='submit' class='btn btn-default'>Submit</button>
     </form>
 
-    <script type="text/javascript">
-        $('#submit-picture').on('click', function () {
-
-            $('input[type="text"]').each(function () {
-                var id = $(this).attr('id');
-                var value = $(this).val();
-                localStorage.setItem(id, value);
-
-            });
-        });
-    </script>
+    <script src='./controller/pages/inspire_us.js'></script>
 

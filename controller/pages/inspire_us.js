@@ -1,34 +1,42 @@
-var lsa = [];
-
 function inspire_us() {
     const appContainer = $('.app-container');
 
     function loadHtml() {
-        appContainer.load('../views/inspire-us/inspire-us.html', onLoad());
+        appContainer.load('../views/inspire-us/inspire-us.html', onLoad);
     }
 
-    function onLoad() {
-        localStorage.setItem('lsa', JSON.stringify(lsa));
-        var retrievedObject = JSON.parse(localStorage.getItem('lsa'));
+    function onLoad() {        
+        let submitButton = $('#submit-picture');
+        let pictureUrl = $('#picture-url');
+        let userName = $('user-name');
+        let pictureDescription = $('#picture-description')
+        let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
-        dict = {
-            "user-name": " ",
-            "picture-description": " ",
-            "picture-url": " "
-        };
+        localStorage.setItem('items',JSON.stringify(itemsArray));
+        let data = JSON.parse(localStorage.getItem('items'));
 
-        $('#submit-picture').on('click', function () {
-            $('input[type="text"]').each(function () {
+        submitButton.on('click',function(){
 
-                var id = $(this).attr('id');
-                var value = $(this).val();
-                dict[id] = value;
-                retrievedObject.p
-                localStorage.setItem('lsa', JSON.stringify(lsa));
-
-                //localStorage.setItem(id, value);
-            })
+            let submission = {
+                name: userName.val(),
+                pictureD: pictureDescription.val(),
+                url: pictureUrl.val()
+              };
+            itemsArray.push(submission); 
+            localStorage.setItem("items", JSON.stringify(itemsArray));
+        })
+        data.forEach(item => {
+            let templateStr2 = `<div class="col-md-4">
+                                                <div id="thumbnail-tag0" class="thumbnail">
+                                                    <a href="${item.url}">
+                                                        <img src="${item.url}">
+                                                    </a>
+                                                </div>
+                                            </div>`;
+            $('#inspire-us').append(templateStr2);
         });
+
+
     }
 
     return {
