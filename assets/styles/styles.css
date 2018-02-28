@@ -3,9 +3,6 @@
     margin: 30px;
 }
 
-
-
-
 /* photosessions */
 
 .gallery-title {
@@ -205,3 +202,7 @@ i.red {
     .last button {
         display: block;
     }
+
+.inspire-us-page #submit-picture-form label {
+    min-width: 136px;
+}

@@ -1,3 +1,5 @@
+'use strict'
+
 function inspire_us() {
     const appContainer = $('.app-container');
 
@@ -34,7 +36,8 @@ function inspire_us() {
         let pictureUrl = $('#picture-url');
         let userName = $('#user-name');
         let pictureDescription = $('#picture-description')
-        let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+        let itemsArray = localStorage.getItem('items') ?
+            JSON.parse(localStorage.getItem('items')) : [];
 
         localStorage.setItem('items', JSON.stringify(itemsArray));
         let data = JSON.parse(localStorage.getItem('items'));
