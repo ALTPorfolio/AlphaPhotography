@@ -5,8 +5,8 @@ function inspire_us() {
 
     function testImage(url, timeoutT) {
         return new Promise(function (resolve, reject) {
-            var timeout = timeoutT || 5000;
-            var timer, img = new Image();
+            let timeout = timeoutT || 5000;
+            let timer, img = new Image();
             img.onerror = img.onabort = function () {
                 clearTimeout(timer);
                 reject("error");
@@ -43,7 +43,7 @@ function inspire_us() {
         let data = JSON.parse(localStorage.getItem('items'));
 
         submitButton.on('click', function () {
-            var result = testImage(pictureUrl.val(), 5000);
+            const result = testImage(pictureUrl.val(), 5000);
             result
                 .then(function (success) {
                     let submission = {
