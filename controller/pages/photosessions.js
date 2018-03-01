@@ -4,7 +4,6 @@ $('#photosession-submit-btn').on('click', function () {
     bootbox.alert('Your request was recorded!');
 });
 
-
 $(document).ready(function () {
 
     $('.filter-button').click(function () {

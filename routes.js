@@ -7,7 +7,7 @@ function Routerize(appContainer) {
             $('#request-btn').hide();
         },
         '#inspire-us-btn': function () {
-            const page = submitPicture();
+            const page = submitPicture(appContainer);
             appContainer.load('../views/inspire-us/inspire-us.html');
             page.loadHtml();
             $('#request-btn').hide();
@@ -17,12 +17,12 @@ function Routerize(appContainer) {
             $('#request-btn').show()
         },
         '#portraits-btn': function () {
-            const page = portraitsPage();
+            const page = portraitsPage(appContainer);
             page.loadHtml();
             $('#request-btn').hide();
         },
         '#landscapes-btn': function () {
-            const page = landscapesPage();
+            const page = landscapesPage(appContainer);
             page.loadHtml();
             $('#request-btn').hide();
         },

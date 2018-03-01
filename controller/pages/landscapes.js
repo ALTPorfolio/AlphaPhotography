@@ -1,8 +1,6 @@
 'use strict'
 
-function landscapesPage() {
-
-    const appContainer = $('.app-container');
+function landscapesPage(appContainer) {
 
     function loadHtml() {
         appContainer.load('../views/portfolio/landscapes.html', onLoad());

@@ -1,7 +1,6 @@
 'use strict'
 
-function submitPicture() {
-    const appContainer = $('.app-container');
+function submitPicture(appContainer) {
 
     function testImage(url, timeoutT) {
         return new Promise(function (resolve, reject) {

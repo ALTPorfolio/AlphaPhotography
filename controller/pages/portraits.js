@@ -1,7 +1,6 @@
 'use strict'
 
-function portraitsPage() {
-    const appContainer = $('.app-container');
+function portraitsPage(appContainer) {
 
     function loadHtml() {
         appContainer.load('../views/portfolio/portraits.html', onLoad());
