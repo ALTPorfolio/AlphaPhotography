@@ -12,7 +12,7 @@
 }
 
     .gallery-title:after {
-        content: "";
+        content: '';
         position: absolute;
         width: 7.5%;
         left: 46.5%;

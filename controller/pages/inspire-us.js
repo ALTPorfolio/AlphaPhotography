@@ -1,6 +1,6 @@
 'use strict'
 
-function inspire_us() {
+function submitPicture() {
     const appContainer = $('.app-container');
 
     function testImage(url, timeoutT) {
@@ -9,17 +9,15 @@ function inspire_us() {
             let timer, img = new Image();
             img.onerror = img.onabort = function () {
                 clearTimeout(timer);
-                reject("error");
+                reject('error');
             };
             img.onload = function () {
                 clearTimeout(timer);
-                resolve("success");
+                resolve('success');
             };
             timer = setTimeout(function () {
-                // reset .src to invalid URL so it stops previous
-                // loading, but doesn't trigger new load
-                img.src = "//!!!!/test.jpg";
-                reject("timeout");
+                img.src = '//!!!!/test.jpg';
+                reject('timeout');
             }, timeout);
             img.src = url;
         });
@@ -61,11 +59,11 @@ function inspire_us() {
                     }
 
                     itemsArray.push(submission);
-                    localStorage.setItem("items", JSON.stringify(itemsArray));
-                    bootbox.alert("Thank you for your contribution!");
+                    localStorage.setItem('items', JSON.stringify(itemsArray));
+                    bootbox.alert('Thank you for your contribution!');
                 })
                 .catch(function (error) {
-                    bootbox.alert("Not a valid image link");
+                    bootbox.alert('Not a valid image link');
 
                 })
         })
@@ -88,5 +86,4 @@ function inspire_us() {
     return {
         loadHtml: loadHtml
     };
-
 }
