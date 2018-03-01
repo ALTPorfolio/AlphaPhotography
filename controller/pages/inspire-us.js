@@ -50,10 +50,10 @@ function submitPicture(appContainer) {
 
                     };
 
-                    if (submission.pictureD == '') {
+                    if (submission.pictureD === '') {
                         submission.pictureD = 'Generic piece';
                     }
-                    if (submission.name == '') {
+                    if (submission.name === '') {
                         submission.name = 'Anonymous';
                     }
 

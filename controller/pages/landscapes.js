@@ -11,7 +11,7 @@ function landscapesPage(appContainer) {
             function (data) {
                 let landscapesImgs = [];
                 for (var i = 0; i < data.data.length; i += 1) {
-                    if (data.data[i].tags == 'landscapes') {
+                    if (data.data[i].tags === 'landscapes') {
                         landscapesImgs.push(data.data[i]);
                     }
                 }
