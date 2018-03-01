@@ -3,7 +3,7 @@
 function portraitsPage(appContainer) {
 
     function loadHtml() {
-        appContainer.load('../views/portfolio/portraits.html', onLoad());
+        appContainer.load('../views/portfolio/portraits.html', onLoad);
     }
 
     function onLoad() {
@@ -11,7 +11,7 @@ function portraitsPage(appContainer) {
             function (data) {
                 let portraitsImgs = [];
                 for (let i = 0; i < data.data.length; i += 1) {
-                    if (data.data[i].tags === 'portraits') {
+                    if (data.data[i].tags.toString() == 'portraits') {
                         portraitsImgs.push(data.data[i]);
                     }
                 }
